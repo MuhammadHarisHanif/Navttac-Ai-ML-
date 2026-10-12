@@ -1,0 +1,11 @@
+
+# Task 9: Check Whether a Number Is Positive, Negative, or Zero
+
+num = float(input("Enter a number: "))
+
+if num > 0:
+    print("The number is positive.")
+elif num < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
