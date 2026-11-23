@@ -1,5 +1,5 @@
 # Muhammad Haris Assignement.
-# NAVTTC AI/ML - Week 6
+# NAVTTC AI/ML - Week 06
 # Task 53: Decision Tree Classification
 
 # Import required libraries
