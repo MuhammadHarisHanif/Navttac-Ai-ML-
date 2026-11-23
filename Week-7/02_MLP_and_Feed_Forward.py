@@ -1,13 +1,13 @@
 
 # Muhammad Haris Assignment
-# Task 57: Exercise on Multi-Layer Perceptron (MLP)
+# Tasks 57 and 58: MLP and Feed Forward Neural Network
 
 # Import required libraries
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score
 
 # Generate sample dataset
 X, y = make_moons(n_samples=500, noise=0.2, random_state=42)
@@ -22,7 +22,8 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# Create MLP model
+# Create Feed Forward Neural Network
+# MLPClassifier uses fully connected feed-forward layers
 model = MLPClassifier(
     hidden_layer_sizes=(16, 8),
     activation="relu",
@@ -31,16 +32,19 @@ model = MLPClassifier(
     random_state=42
 )
 
-# Train the model
+# Train the neural network
 model.fit(X_train, y_train)
 
 # Make predictions
 y_pred = model.predict(X_test)
 
 # Evaluate model
-print("MLP Classification Results")
-print("--------------------------")
+print("Feed Forward Neural Network Results")
+print("-----------------------------------")
 print("Accuracy:", accuracy_score(y_test, y_pred))
 
-print("\nClassification Report:")
-print(classification_report(y_test, y_pred))
+print("\nNetwork Architecture:")
+print("Input Layer: 2 neurons")
+print("Hidden Layer 1: 16 neurons")
+print("Hidden Layer 2: 8 neurons")
+print("Output Layer: 2 classes")
